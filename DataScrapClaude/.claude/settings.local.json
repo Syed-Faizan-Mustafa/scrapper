@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code}  time=%{time_total}s\\\\n\" -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 Chrome/124.0 Safari/537.36\" --max-time 25 https://www.bankbranchlocator.com/wells-fargo-bank-cordova-ak-branch.html)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  connect=%{time_connect}s total=%{time_total}s\\\\n\" --max-time 20 \"https://www.bankbranchlocator.com/northrim-bank-sitka-branch.html\")",
+      "Bash(echo \"curl exit $?\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  total=%{time_total}s\\\\n\" --max-time 15 \"https://example.com\")",
+      "Bash(curl -s -o /dev/null -w \"target: HTTP %{http_code}  connect=%{time_connect}s total=%{time_total}s\\\\n\" --max-time 20 \"https://www.bankbranchlocator.com/northrim-bank-sitka-branch.html\")",
+      "Bash(echo \"target: curl exit $?\")",
+      "Bash(curl -s -o /dev/null -w \"probe: HTTP %{http_code}  total=%{time_total}s\\\\n\" --max-time 20 \"https://www.bankbranchlocator.com/first-bank-wrangell-branch.html\")",
+      "Bash(echo \"probe: curl exit $?\")",
+      "Bash(curl -s -o /dev/null -w \"target: HTTP %{http_code}  total=%{time_total}s\\\\n\" --max-time 20 \"https://www.bankbranchlocator.com/\")",
+      "Bash(curl -s -o /dev/null -w \"control: HTTP %{http_code}\\\\n\" --max-time 15 \"https://example.com\")",
+      "Bash(echo \"control: curl exit $?\")",
+      "Bash(powercfg /query SCHEME_CURRENT SUB_SLEEP STANDBYIDLE)",
+      "Bash(powercfg /change standby-timeout-ac 0)",
+      "Bash(powercfg /change hibernate-timeout-ac 0)",
+      "Bash(powercfg /change monitor-timeout-ac 15)",
+      "Bash(curl -s -o /dev/null -w \"target: %{http_code}  total=%{time_total}s\\\\n\" --max-time 20 \"https://www.bankbranchlocator.com/\")",
+      "Bash(curl -s -o /dev/null -w \"control: %{http_code}\\\\n\" --max-time 15 \"https://example.com\")"
+    ]
+  }
+}

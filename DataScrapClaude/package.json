@@ -1,0 +1,17 @@
+{
+  "name": "bankbranch-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Scraper for bankbranchlocator.com -> Excel tree (USA Bank/<State>/<City>.xlsx with one sheet per bank)",
+  "scripts": {
+    "start": "node src/main.js",
+    "pilot": "node src/main.js --state Alaska",
+    "smoke": "node src/main.js --state Alaska --limit 8"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "exceljs": "^4.4.0",
+    "p-limit": "^6.1.0"
+  }
+}
